@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect x="0" y="0" width="1600" height="64" rx="0" fill="#0b1220" stroke="#1f2937" stroke-width="2"/>
+<text x="20" y="40" font-family="Inter, system-ui, Arial" font-size="22" fill="#e5e7eb" font-weight="700">Project: Apollo Website — Task Board</text>
+<rect x="0" y="64" width="240" height="836" rx="0" fill="#0b1220" stroke="#1f2937" stroke-width="2"/>
+<text x="24" y="100" font-family="Inter, system-ui, Arial" font-size="18" fill="#94a3b8" font-weight="400">Home</text>
+<text x="24" y="140" font-family="Inter, system-ui, Arial" font-size="18" fill="#94a3b8" font-weight="400">Timesheet</text>
+<text x="24" y="180" font-family="Inter, system-ui, Arial" font-size="18" fill="#94a3b8" font-weight="400">Projects</text>
+<text x="24" y="220" font-family="Inter, system-ui, Arial" font-size="18" fill="#94a3b8" font-weight="400">Tasks</text>
+<text x="24" y="260" font-family="Inter, system-ui, Arial" font-size="18" fill="#94a3b8" font-weight="400">Schedule</text>
+<text x="24" y="300" font-family="Inter, system-ui, Arial" font-size="18" fill="#94a3b8" font-weight="400">Approvals</text>
+<text x="24" y="340" font-family="Inter, system-ui, Arial" font-size="18" fill="#94a3b8" font-weight="400">Reports</text>
+<text x="24" y="380" font-family="Inter, system-ui, Arial" font-size="18" fill="#94a3b8" font-weight="400">Chat</text>
+<text x="24" y="420" font-family="Inter, system-ui, Arial" font-size="18" fill="#94a3b8" font-weight="400">Admin</text>
+<rect x="260" y="100" width="320" height="760" rx="12" fill="#0b1220" stroke="#1f2937" stroke-width="2"/>
+<rect x="260" y="100" width="320" height="46" rx="12" fill="#111827" stroke="#1f2937" stroke-width="2"/>
+<text x="272" y="128" font-family="Inter, system-ui, Arial" font-size="18" fill="#e5e7eb" font-weight="700">TO DO (6)</text>
+<rect x="276" y="170" width="288" height="120" rx="12" fill="#0f172a" stroke="#1f2937" stroke-width="2"/>
+<text x="286" y="200" font-family="Inter, system-ui, Arial" font-size="16" fill="#e5e7eb" font-weight="400">[#120] Sample task</text>
+<text x="286" y="224" font-family="Inter, system-ui, Arial" font-size="14" fill="#94a3b8" font-weight="400">P1 4h  @User</text>
+<text x="286" y="248" font-family="Inter, system-ui, Arial" font-size="14" fill="#94a3b8" font-weight="400">⏱ 0h  ◷ due Fri • label</text>
+<rect x="276" y="310" width="288" height="120" rx="12" fill="#0f172a" stroke="#1f2937" stroke-width="2"/>
+<text x="286" y="340" font-family="Inter, system-ui, Arial" font-size="16" fill="#e5e7eb" font-weight="400">[#121] Sample task</text>
+<text x="286" y="364" font-family="Inter, system-ui, Arial" font-size="14" fill="#94a3b8" font-weight="400">P2 4h  @User</text>
+<text x="286" y="388" font-family="Inter, system-ui, Arial" font-size="14" fill="#94a3b8" font-weight="400">⏱ 0h  ◷ due Fri • label</text>
+<rect x="276" y="450" width="288" height="120" rx="12" fill="#0f172a" stroke="#1f2937" stroke-width="2"/>
+<text x="286" y="480" font-family="Inter, system-ui, Arial" font-size="16" fill="#e5e7eb" font-weight="400">[#122] Sample task</text>
+<text x="286" y="504" font-family="Inter, system-ui, Arial" font-size="14" fill="#94a3b8" font-weight="400">P3 4h  @User</text>
+<text x="286" y="528" font-family="Inter, system-ui, Arial" font-size="14" fill="#94a3b8" font-weight="400">⏱ 0h  ◷ due Fri • label</text>
+<rect x="590" y="100" width="320" height="760" rx="12" fill="#0b1220" stroke="#1f2937" stroke-width="2"/>
+<rect x="590" y="100" width="320" height="46" rx="12" fill="#111827" stroke="#1f2937" stroke-width="2"/>
+<text x="602" y="128" font-family="Inter, system-ui, Arial" font-size="18" fill="#e5e7eb" font-weight="700">IN PROGRESS (4)</text>
+<rect x="606" y="170" width="288" height="120" rx="12" fill="#0f172a" stroke="#1f2937" stroke-width="2"/>
+<text x="616" y="200" font-family="Inter, system-ui, Arial" font-size="16" fill="#e5e7eb" font-weight="400">[#125] Sample task</text>
+<text x="616" y="224" font-family="Inter, system-ui, Arial" font-size="14" fill="#94a3b8" font-weight="400">P1 4h  @User</text>
+<text x="616" y="248" font-family="Inter, system-ui, Arial" font-size="14" fill="#94a3b8" font-weight="400">⏱ 0h  ◷ due Fri • label</text>
+<rect x="606" y="310" width="288" height="120" rx="12" fill="#0f172a" stroke="#1f2937" stroke-width="2"/>
+<text x="616" y="340" font-family="Inter, system-ui, Arial" font-size="16" fill="#e5e7eb" font-weight="400">[#126] Sample task</text>
+<text x="616" y="364" font-family="Inter, system-ui, Arial" font-size="14" fill="#94a3b8" font-weight="400">P2 4h  @User</text>
+<text x="616" y="388" font-family="Inter, system-ui, Arial" font-size="14" fill="#94a3b8" font-weight="400">⏱ 0h  ◷ due Fri • label</text>
+<rect x="606" y="450" width="288" height="120" rx="12" fill="#0f172a" stroke="#1f2937" stroke-width="2"/>
+<text x="616" y="480" font-family="Inter, system-ui, Arial" font-size="16" fill="#e5e7eb" font-weight="400">[#127] Sample task</text>
+<text x="616" y="504" font-family="Inter, system-ui, Arial" font-size="14" fill="#94a3b8" font-weight="400">P3 4h  @User</text>
+<text x="616" y="528" font-family="Inter, system-ui, Arial" font-size="14" fill="#94a3b8" font-weight="400">⏱ 0h  ◷ due Fri • label</text>
+<rect x="920" y="100" width="320" height="760" rx="12" fill="#0b1220" stroke="#1f2937" stroke-width="2"/>
+<rect x="920" y="100" width="320" height="46" rx="12" fill="#111827" stroke="#1f2937" stroke-width="2"/>
+<text x="932" y="128" font-family="Inter, system-ui, Arial" font-size="18" fill="#e5e7eb" font-weight="700">REVIEW (2)</text>
+<rect x="936" y="170" width="288" height="120" rx="12" fill="#0f172a" stroke="#1f2937" stroke-width="2"/>
+<text x="946" y="200" font-family="Inter, system-ui, Arial" font-size="16" fill="#e5e7eb" font-weight="400">[#130] Sample task</text>
+<text x="946" y="224" font-family="Inter, system-ui, Arial" font-size="14" fill="#94a3b8" font-weight="400">P1 4h  @User</text>
+<text x="946" y="248" font-family="Inter, system-ui, Arial" font-size="14" fill="#94a3b8" font-weight="400">⏱ 0h  ◷ due Fri • label</text>
+<rect x="936" y="310" width="288" height="120" rx="12" fill="#0f172a" stroke="#1f2937" stroke-width="2"/>
+<text x="946" y="340" font-family="Inter, system-ui, Arial" font-size="16" fill="#e5e7eb" font-weight="400">[#131] Sample task</text>
+<text x="946" y="364" font-family="Inter, system-ui, Arial" font-size="14" fill="#94a3b8" font-weight="400">P2 4h  @User</text>
+<text x="946" y="388" font-family="Inter, system-ui, Arial" font-size="14" fill="#94a3b8" font-weight="400">⏱ 0h  ◷ due Fri • label</text>
+<rect x="936" y="450" width="288" height="120" rx="12" fill="#0f172a" stroke="#1f2937" stroke-width="2"/>
+<text x="946" y="480" font-family="Inter, system-ui, Arial" font-size="16" fill="#e5e7eb" font-weight="400">[#132] Sample task</text>
+<text x="946" y="504" font-family="Inter, system-ui, Arial" font-size="14" fill="#94a3b8" font-weight="400">P3 4h  @User</text>
+<text x="946" y="528" font-family="Inter, system-ui, Arial" font-size="14" fill="#94a3b8" font-weight="400">⏱ 0h  ◷ due Fri • label</text>
+<rect x="1250" y="100" width="320" height="760" rx="12" fill="#0b1220" stroke="#1f2937" stroke-width="2"/>
+<rect x="1250" y="100" width="320" height="46" rx="12" fill="#111827" stroke="#1f2937" stroke-width="2"/>
+<text x="1262" y="128" font-family="Inter, system-ui, Arial" font-size="18" fill="#e5e7eb" font-weight="700">DONE (18)</text>
+<rect x="1266" y="170" width="288" height="120" rx="12" fill="#0f172a" stroke="#1f2937" stroke-width="2"/>
+<text x="1276" y="200" font-family="Inter, system-ui, Arial" font-size="16" fill="#e5e7eb" font-weight="400">[#135] Sample task</text>
+<text x="1276" y="224" font-family="Inter, system-ui, Arial" font-size="14" fill="#94a3b8" font-weight="400">P1 4h  @User</text>
+<text x="1276" y="248" font-family="Inter, system-ui, Arial" font-size="14" fill="#94a3b8" font-weight="400">⏱ 0h  ◷ due Fri • label</text>
+<rect x="1266" y="310" width="288" height="120" rx="12" fill="#0f172a" stroke="#1f2937" stroke-width="2"/>
+<text x="1276" y="340" font-family="Inter, system-ui, Arial" font-size="16" fill="#e5e7eb" font-weight="400">[#136] Sample task</text>
+<text x="1276" y="364" font-family="Inter, system-ui, Arial" font-size="14" fill="#94a3b8" font-weight="400">P2 4h  @User</text>
+<text x="1276" y="388" font-family="Inter, system-ui, Arial" font-size="14" fill="#94a3b8" font-weight="400">⏱ 0h  ◷ due Fri • label</text>
+<rect x="1266" y="450" width="288" height="120" rx="12" fill="#0f172a" stroke="#1f2937" stroke-width="2"/>
+<text x="1276" y="480" font-family="Inter, system-ui, Arial" font-size="16" fill="#e5e7eb" font-weight="400">[#137] Sample task</text>
+<text x="1276" y="504" font-family="Inter, system-ui, Arial" font-size="14" fill="#94a3b8" font-weight="400">P3 4h  @User</text>
+<text x="1276" y="528" font-family="Inter, system-ui, Arial" font-size="14" fill="#94a3b8" font-weight="400">⏱ 0h  ◷ due Fri • label</text>
+</svg>
