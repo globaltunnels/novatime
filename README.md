@@ -18,34 +18,33 @@ NovaTime merges the best of Clockify, Toggl, Harvest, Connecteam, and Buddy Punc
 ```
 novatime/ (Repository Root)
 ├── backend/               # Django application root
-│   ├── apps/             # Django applications
-│   │   ├── accounts-app/      # User management
-│   │   ├── organizations-app/ # Multi-tenant organizations
-│   │   ├── tasks-app/         # Task management
-│   │   ├── time-entries-app/  # Time tracking
-│   │   ├── timesheets-app/    # Timesheet processing
-│   │   ├── attendance-app/    # Frontline attendance
-│   │   ├── projects-app/      # Project management
-│   │   ├── approvals-app/     # Approval workflows
-│   │   ├── billing-app/       # Invoicing and billing
-│   │   ├── conversations-app/ # Chat and messaging
-│   │   ├── ai-app/           # AI services integration
-│   │   ├── insights-app/     # Analytics and reporting
-│   │   ├── integrations-app/ # External integrations
-│   │   ├── seo-app/          # SEO content management
-│   │   └── abtests-app/      # A/B testing framework
-│   ├── project-settings/     # Django project settings
-│   │   ├── settings.py       # Main settings
-│   │   ├── urls.py           # URL configuration
-│   │   ├── wsgi.py           # WSGI application
-│   │   ├── asgi.py           # ASGI application
+│   ├── iam/               # Identity Access Management
+│   ├── organizations/     # Multi-tenant organizations
+│   ├── tasks/             # Task management
+│   ├── time_entries/      # Time tracking
+│   ├── timesheets/        # Timesheet processing
+│   ├── attendance/        # Frontline attendance
+│   ├── projects/          # Project management
+│   ├── approvals/         # Approval workflows
+│   ├── billing/           # Invoicing and billing
+│   ├── conversations/     # Chat and messaging
+│   ├── ai/                # AI services integration
+│   ├── insights/          # Analytics and reporting
+│   ├── integrations/      # External integrations
+│   ├── seo/               # SEO content management
+│   ├── abtests/           # A/B testing framework
+│   ├── manage.py          # Django management script
+│   ├── main/              # Django project settings
+│   │   ├── settings.py    # Main settings
+│   │   ├── urls.py        # URL configuration
+│   │   ├── wsgi.py        # WSGI application
+│   │   ├── asgi.py        # ASGI application
 │   │   └── __init__.py
-│   ├── static/               # Static files
-│   ├── templates/            # Django templates
-│   ├── media/                # User-uploaded files
-│   ├── logs/                 # Application logs
-│   ├── staticfiles/          # Collected static files
-│   └── manage.py             # Django management script
+│   ├── static/            # Static files
+│   ├── templates/         # Django templates
+│   ├── media/             # User-uploaded files
+│   ├── logs/              # Application logs
+│   └── staticfiles/       # Collected static files
 ├── frontend/              # React frontend application
 │   ├── public/           # Static assets
 │   ├── src/              # Source code
@@ -173,7 +172,7 @@ The project uses GitHub Actions for continuous integration with:
 
 ## Documentation
 
-- [Business Plan & Technical Specification](docs/initial-plan.md)
+- [Business Plan & Technical Specification](docs/planning/)
 - [API Documentation](docs/novatime_openapi_v1.1.yaml)
 - [Migration Guide](migration_plan.md)
 - [Architecture Overview](docs/)

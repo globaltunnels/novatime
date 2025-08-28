@@ -6,15 +6,17 @@ Comprehensive documentation for the NovaTime platform including business plans, 
 
 ```
 docs/
-├── initial-plan.md            # Business plan, marketing plan, and implementation plan
-├── novatime_openapi_v1.1.yaml # API specification (OpenAPI 3.0)
-├── novatime_storyboard.html   # UI wireframes and user journey
+├── planning/                   # Business and implementation plans
+│   ├── initial-plan.md         # Original business plan and market analysis
+│   └── novatime-implementation-plan.md # Comprehensive implementation roadmap
+├── novatime_openapi_v1.1.yaml  # API specification (OpenAPI 3.0)
+├── novatime_storyboard.html    # UI wireframes and user journey
 ├── novatime_swagger_ui_bundle/ # Interactive API documentation
-├── wireframes/                # PNG wireframe images
-├── wireframes_svg/            # SVG wireframe images
-├── architecture/              # System architecture documentation
-├── development/               # Development guides and standards
-├── deployment/                # Deployment and operations guides
+├── wireframes/                 # PNG wireframe images
+├── wireframes_svg/             # SVG wireframe images
+├── architecture/               # System architecture documentation
+├── development/                # Development guides and standards
+├── deployment/                 # Deployment and operations guides
 ├── testing/                   # Testing strategies and procedures
 ├── api/                       # API documentation and guides
 ├── troubleshooting/           # Common issues and solutions
@@ -54,7 +56,8 @@ Each documentation file includes YAML front matter with:
 ## Key Documents
 
 ### Business & Strategy
-- **[initial-plan.md](initial-plan.md)**: Comprehensive business plan, market analysis, and implementation roadmap
+- **[initial-plan.md](planning/initial-plan.md)**: Original business plan, market analysis, and strategy
+- **[novatime-implementation-plan.md](planning/novatime-implementation-plan.md)**: Comprehensive technical implementation roadmap
 
 ### Technical Specification
 - **[novatime_openapi_v1.1.yaml](novatime_openapi_v1.1.yaml)**: Complete API specification with examples

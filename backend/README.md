@@ -1,6 +1,58 @@
-# NovaTime Django Apps
+# NovaTime Django Backend
 
-This directory contains all Django applications for the NovaTime platform, organized as modular, reusable components.
+This directory contains the Django backend for the NovaTime platform, organized as modular, reusable components.
+
+## Directory Structure
+
+```
+backend/
+├── manage.py                # Django management script
+├── main/                    # Django project settings
+│   ├── settings.py          # Main settings
+│   ├── urls.py              # URL configuration
+│   ├── wsgi.py              # WSGI application
+│   ├── asgi.py              # ASGI application
+│   └── __init__.py
+├── iam/                     # Identity Access Management app
+├── organizations/           # Multi-tenant organizations app
+├── tasks/                   # Task management app
+├── time_entries/            # Time tracking app
+├── timesheets/              # Timesheet management app
+├── projects/                # Project management app
+├── attendance/              # Frontline attendance app
+├── approvals/               # Approval workflows app
+├── billing/                 # Invoicing and billing app
+├── conversations/           # Chat and messaging app
+├── insights/                # Analytics and reporting app
+├── ai/                      # AI services integration app
+├── integrations/            # External integrations app
+├── seo/                     # SEO content management app
+├── abtests/                 # A/B testing framework app
+├── static/                  # Static files
+├── templates/               # Django templates
+├── media/                   # User-uploaded files
+├── tests/                   # Test files
+├── .env                     # Environment variables
+├── .env.example             # Environment variables template
+└── README.md                # This file
+```
+
+## Django Management
+
+To run Django management commands, navigate to the `backend/` directory:
+
+```bash
+cd backend
+python manage.py [command]
+```
+
+For example:
+```bash
+cd backend
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
+```
 
 ## Apps Overview
 
@@ -8,7 +60,7 @@ This directory contains all Django applications for the NovaTime platform, organ
 - **iam**: Identity Access Manaagement, User management, authentication, and authorization
 - **organizations**: Multi-tenant organization management and RBAC
 - **tasks**: Task and project management with AI assignment
-- **time-entries**: Time tracking entries and idle detection
+- **timeentries**: Time tracking entries and idle detection
 - **timesheets**: Timesheet management, submission, and approvals
 - **projects**: Project management with timelines and dependencies
 
@@ -87,7 +139,7 @@ app-name/
 
 ## Adding New Apps
 
-1. Create new app directory with hyphens (e.g., `new-feature`)
+1. Create new app directory without hyphens (e.g., `new_feature`)
 2. Add to `INSTALLED_APPS` in settings
 3. Create basic app structure following the standards
 4. Add URL patterns to main `urls.py`

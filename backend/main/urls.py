@@ -34,32 +34,32 @@ urlpatterns = [
 
     # Authentication
     path('accounts/', include('allauth.urls')),
-    # path('auth/', include('backend.apps.accounts.urls')),  # Temporarily disabled
+    # path('auth/', include('iam.urls')),  # Temporarily disabled
     path('oauth/', include('oauth2_provider.urls', namespace='oauth2_provider')),
 
     # API v1 (temporarily disabled for initial setup)
     # path('api/v1/', include([
-    #     path('accounts/', include('backend.apps.accounts.urls')),
-    #     path('organizations/', include('backend.apps.organizations.urls')),
-    #     path('tasks/', include('backend.apps.tasks.urls')),
-    #     path('assignments/', include('backend.apps.tasks.urls')),  # Assignments are part of tasks
-    #     path('time-entries/', include('backend.apps.time_entries.urls')),
-    #     path('timesheets/', include('backend.apps.timesheets.urls')),
-    #     path('approvals/', include('backend.apps.approvals.urls')),
-    #     path('attendance/', include('backend.apps.attendance.urls')),
-    #     path('projects/', include('backend.apps.projects.urls')),
-    #     path('billing/', include('backend.apps.billing.urls')),
-    #     path('conversations/', include('backend.apps.conversations.urls')),
-    #     path('messages/', include('backend.apps.conversations.urls')),  # Messages are part of conversations
-    #     path('ai/', include('backend.apps.ai.urls')),
-    #     path('insights/', include('backend.apps.insights.urls')),
-    #     path('integrations/', include('backend.apps.integrations.urls')),
-    #     path('seo/', include('backend.apps.seo.urls')),
-    #     path('abtests/', include('backend.apps.abtests.urls')),
+    #     path('accounts/', include('iam.urls')),
+    #     path('organizations/', include('organizations.urls')),
+    #     path('tasks/', include('tasks.urls')),
+    #     path('assignments/', include('tasks.urls')),  # Assignments are part of tasks
+    #     path('time-entries/', include('time_entries.urls')),
+    #     path('timesheets/', include('timesheets.urls')),
+    #     path('approvals/', include('approvals.urls')),
+    #     path('attendance/', include('attendance.urls')),
+    #     path('projects/', include('projects.urls')),
+    #     path('billing/', include('billing.urls')),
+    #     path('conversations/', include('conversations.urls')),
+    #     path('messages/', include('conversations.urls')),  # Messages are part of conversations
+    #     path('ai/', include('ai.urls')),
+    #     path('insights/', include('insights.urls')),
+    #     path('integrations/', include('integrations.urls')),
+    #     path('seo/', include('seo.urls')),
+    #     path('abtests/', include('abtests.urls')),
     # ])),
 
     # Organizations (temporarily disabled)
-    # path('orgs/', include('backend.apps.organizations.urls')),
+    # path('orgs/', include('organizations.urls')),
 ]
 
 # Serve media files in development

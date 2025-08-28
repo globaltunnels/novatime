@@ -69,21 +69,21 @@ INSTALLED_APPS = [
     'django_prometheus',
 
     # Local apps (temporarily disabled for initial setup)
-    # 'backend.apps.accounts_app',
-    # 'backend.apps.organizations_app',
-    # 'backend.apps.tasks_app',
-    # 'backend.apps.time_entries_app',
-    # 'backend.apps.timesheets_app',
-    # 'backend.apps.attendance_app',
-    # 'backend.apps.projects_app',
-    # 'backend.apps.approvals_app',
-    # 'backend.apps.billing_app',
-    # 'backend.apps.conversations_app',
-    # 'backend.apps.ai_app',
-    # 'backend.apps.insights_app',
-    # 'backend.apps.integrations_app',
-    # 'backend.apps.seo_app',
-    # 'backend.apps.abtests_app',
+    # 'iam',
+    # 'organizations',
+    # 'tasks',
+    # 'time_entries',
+    # 'timesheets',
+    # 'attendance',
+    # 'projects',
+    # 'approvals',
+    # 'billing',
+    # 'conversations',
+    # 'ai',
+    # 'insights',
+    # 'integrations',
+    # 'seo',
+    # 'abtests',
 ]
 
 MIDDLEWARE = [
@@ -103,7 +103,7 @@ MIDDLEWARE = [
     'django_prometheus.middleware.PrometheusAfterMiddleware',
 ]
 
-ROOT_URLCONF = 'project_settings.urls'
+ROOT_URLCONF = 'main.urls'
 
 TEMPLATES = [
     {
@@ -121,8 +121,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'project_settings.wsgi.application'
-ASGI_APPLICATION = 'project_settings.asgi.application'
+WSGI_APPLICATION = 'main.wsgi.application'
+ASGI_APPLICATION = 'main.asgi.application'
 
 
 # Database
@@ -131,11 +131,11 @@ ASGI_APPLICATION = 'project_settings.asgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'novatime',
-        'USER': 'novatime',
-        'PASSWORD': 'novatime',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': config('DB_NAME', default='novatime'),
+        'USER': config('DB_USER', default='novatime'),
+        'PASSWORD': config('DB_PASSWORD', default='password'),
+        'HOST': config('DB_HOST', default='localhost'),
+        'PORT': config('DB_PORT', default='5432'),
         'OPTIONS': {
             'options': '-c search_path=novatime',
         },
@@ -342,7 +342,7 @@ HEALTH_CHECK = {
 }
 
 # Custom user model (temporarily disabled)
-# AUTH_USER_MODEL = 'backend.apps.accounts_app.User'
+# AUTH_USER_MODEL = 'iam.User'
 
 # AllAuth configuration
 ACCOUNT_EMAIL_REQUIRED = True
@@ -364,9 +364,9 @@ OAUTH2_PROVIDER = {
 # PROMETHEUS_METRICS_EXPORT_ADDRESS = config('PROMETHEUS_METRICS_EXPORT_ADDRESS', default='')
 
 # Feature flags (temporarily disabled)
-# WAFFLE_FLAG_MODEL = 'backend.apps.abtests_app.FeatureFlag'
-# WAFFLE_SAMPLE_MODEL = 'backend.apps.abtests_app.Sample'
-# WAFFLE_SWITCH_MODEL = 'backend.apps.abtests_app.Switch'
+# WAFFLE_FLAG_MODEL = 'abtests.FeatureFlag'
+# WAFFLE_SAMPLE_MODEL = 'abtests.Sample'
+# WAFFLE_SWITCH_MODEL = 'abtests.Switch'
 
 # Import local settings if they exist
 try:
