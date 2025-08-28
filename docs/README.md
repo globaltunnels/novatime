@@ -9,17 +9,46 @@ docs/
 ├── planning/                   # Business and implementation plans
 │   ├── initial-plan.md         # Original business plan and market analysis
 │   └── novatime-implementation-plan.md # Comprehensive implementation roadmap
+├── specification/              # Technical specifications
+│   ├── ai/                     # AI and ML specifications
+│   ├── architect/              # Architecture specifications
+│   ├── auth/                   # Authentication specifications
+│   ├── backend/                # Backend specifications
+│   ├── chat/                   # Chat and messaging specifications
+│   ├── devops/                 # DevOps specifications
+│   ├── frontend/               # Frontend specifications
+│   ├── observability/          # Monitoring and observability specs
+│   ├── security/               # Security specifications
+│   └── testing/                # Testing specifications
+├── standard/                   # Standards and guidelines
+│   ├── coding-standards/       # Coding standards
+│   └── security/               # Security standards
+├── design/                     # Design documentation
+│   ├── architecture/           # Architecture design docs
+│   └── decisions/              # Design decision records
+├── process/                    # Process documentation
+│   ├── devops-playbooks/       # DevOps playbooks
+│   ├── finance/                # Financial processes
+│   ├── governance/             # Governance processes
+│   ├── product/                # Product processes
+│   ├── prompt-management/      # AI prompt management
+│   ├── prompt-registry/        # AI prompt registry
+│   ├── standards/              # Process standards
+│   └── workflow/               # Workflow documentation
+├── ai-self-improvement/        # AI self-improvement documentation
+├── automation/                 # Automation documentation
+├── copilot/                    # Copilot documentation
+├── prompt-management/          # Prompt management docs
+├── prompt-registry/            # Prompt registry docs
+├── prompts/                    # AI prompts collection
+├── standards-compliance/       # Standards compliance docs
+├── working-documents/          # Working documents
+├── archive/                    # Archived documentation
 ├── novatime_openapi_v1.1.yaml  # API specification (OpenAPI 3.0)
 ├── novatime_storyboard.html    # UI wireframes and user journey
 ├── novatime_swagger_ui_bundle/ # Interactive API documentation
 ├── wireframes/                 # PNG wireframe images
 ├── wireframes_svg/             # SVG wireframe images
-├── architecture/               # System architecture documentation
-├── development/                # Development guides and standards
-├── deployment/                 # Deployment and operations guides
-├── testing/                   # Testing strategies and procedures
-├── api/                       # API documentation and guides
-├── troubleshooting/           # Common issues and solutions
 └── README.md                  # This file
 ```
 
