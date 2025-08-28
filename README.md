@@ -81,7 +81,7 @@ novatime/ (Repository Root)
 
 ### Prerequisites
 
-- Python 3.11+
+- Python 3.12.11 (managed via pyenv)
 - PostgreSQL 15+
 - Redis 7+
 - Node.js 18+ (for frontend development)
@@ -89,9 +89,10 @@ novatime/ (Repository Root)
 ### Backend Setup
 
 ```bash
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+# Using pyenv to set Python version
+pyenv install 3.12.11
+pyenv virtualenv 3.12.11 novatime
+pyenv local novatime
 
 # Install dependencies
 pip install -r requirements.txt

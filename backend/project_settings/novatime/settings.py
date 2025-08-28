@@ -321,7 +321,6 @@ LOGGING = {
             'level': 'INFO',
             'class': 'logging.StreamHandler',
             'formatter': 'simple',
-            'encoding': 'utf-8',
         },
     },
     'root': {
