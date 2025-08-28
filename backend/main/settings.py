@@ -60,8 +60,6 @@ INSTALLED_APPS = [
     'storages',
     'waffle',
     'auditlog',
-    'crispy_forms',
-    'crispy_bootstrap5',
     'health_check',
     'health_check.db',
     'health_check.cache',
@@ -326,14 +324,10 @@ os.makedirs(BASE_DIR / 'backend' / 'logs', exist_ok=True)
 # DRF Spectacular settings
 SPECTACULAR_SETTINGS = {
     'TITLE': 'NovaTime API',
-    'DESCRIPTION': 'Unified API for timesheets, tasks, collaboration, insights, SEO, and auth with pagination, errors, and security.',
+    'DESCRIPTION': 'Unified API for timesheets, tasks, collaboration, insights, and auth with pagination, errors, and security.',
     'VERSION': '1.1.0',
     'SERVE_INCLUDE_SCHEMA': False,
 }
-
-# Crispy Forms
-CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
-CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 # Health Check
 HEALTH_CHECK = {

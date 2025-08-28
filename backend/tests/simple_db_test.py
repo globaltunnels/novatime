@@ -6,7 +6,7 @@ import django
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Set the Django settings module
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project_settings.novatime.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'main.settings')
 
 try:
     django.setup()

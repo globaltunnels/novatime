@@ -13,67 +13,71 @@ NovaTime merges the best of Clockify, Toggl, Harvest, Connecteam, and Buddy Punc
 - **Unified Workflow**: Timers + shifts + chat + lightweight PM in one tool
 - **Privacy-First**: No surveillance, cohort-fair benchmarks, transparent controls
 
-## Project Structure
+## Project Structure (Cleaned & Optimized)
 
 ```
 novatime/ (Repository Root)
 ├── backend/               # Django application root
-│   ├── iam/               # Identity Access Management
-│   ├── organizations/     # Multi-tenant organizations
-│   ├── tasks/             # Task management
-│   ├── time_entries/      # Time tracking
-│   ├── timesheets/        # Timesheet processing
-│   ├── attendance/        # Frontline attendance
-│   ├── projects/          # Project management
-│   ├── approvals/         # Approval workflows
-│   ├── billing/           # Invoicing and billing
-│   ├── conversations/     # Chat and messaging
-│   ├── ai/                # AI services integration
-│   ├── insights/          # Analytics and reporting
-│   ├── integrations/      # External integrations
-│   ├── seo/               # SEO content management
-│   ├── abtests/           # A/B testing framework
-│   ├── manage.py          # Django management script
 │   ├── main/              # Django project settings
-│   │   ├── settings.py    # Main settings
+│   │   ├── settings.py    # Main settings (cleaned up)
 │   │   ├── urls.py        # URL configuration
 │   │   ├── wsgi.py        # WSGI application
 │   │   ├── asgi.py        # ASGI application
 │   │   └── __init__.py
+│   ├── tests/             # Backend test files (fixed settings)
+│   │   ├── simple_db_test.py
+│   │   └── test_db_connection.py
 │   ├── static/            # Static files
 │   ├── templates/         # Django templates
-│   ├── media/             # User-uploaded files
-│   ├── logs/              # Application logs
-│   └── staticfiles/       # Collected static files
-├── frontend/              # React frontend application
-│   ├── public/           # Static assets
-│   ├── src/              # Source code
-│   │   ├── components/   # Reusable components
-│   │   ├── pages/        # Page components
-│   │   └── services/     # API services
-│   └── tests/            # Frontend tests
-├── playwright/           # End-to-end tests
-│   ├── tests/            # Test files
-│   │   ├── auth/         # Authentication tests
-│   │   ├── ui/           # UI tests
-│   │   └── api/          # API tests
-│   ├── fixtures/         # Test fixtures
-│   ├── utils/            # Test utilities
-│   ├── playwright.config.ts # Playwright configuration
-│   └── package.json      # Node dependencies
-├── tasks/                # Standalone tasks system
-│   ├── copilot/          # AI copilot functionality
-│   ├── taskexec/         # Task execution engine
-│   └── out/              # Task output directory
-├── docs/                 # Documentation and assets
-├── scripts/              # Utility scripts
-├── mcp-server/          # MCP server components
-├── .env.example          # Environment variables template
-├── docker-compose.yml    # Docker development setup
-├── Dockerfile           # Docker image definition
-├── pytest.ini           # pytest configuration
-├── requirements.txt     # Python dependencies
-└── README.md            # This file
+│   └── manage.py          # Django management script
+├── frontend/              # React frontend (design system based)
+│   ├── public/            # Static assets
+│   │   ├── icons/         # Icon assets
+│   │   └── images/        # Image assets
+│   ├── src/               # Source code
+│   │   ├── components/    # Organized by type
+│   │   │   ├── ui/        # Basic UI components
+│   │   │   ├── layout/    # Layout components
+│   │   │   ├── forms/     # Form components
+│   │   │   └── charts/    # Chart components
+│   │   ├── pages/         # Feature-based pages
+│   │   │   ├── auth/      # Authentication pages
+│   │   │   ├── dashboard/ # Main dashboard
+│   │   │   ├── tasks/     # Task management
+│   │   │   ├── time/      # Time tracking
+│   │   │   ├── approvals/ # Approval workflows
+│   │   │   ├── reports/   # Reports and analytics
+│   │   │   ├── chat/      # Team chat with @ai
+│   │   │   └── admin/     # Admin interfaces
+│   │   ├── hooks/         # Custom React hooks
+│   │   ├── services/      # API services
+│   │   ├── styles/        # CSS with design tokens
+│   │   │   ├── index.css  # Main stylesheet
+│   │   │   └── tokens.css # Design token definitions
+│   │   ├── utils/         # Utility functions
+│   │   └── types/         # TypeScript type definitions
+│   ├── package.json       # Node.js dependencies
+│   ├── vite.config.ts     # Vite configuration
+│   ├── tailwind.config.js # Tailwind CSS config with tokens
+│   └── tsconfig.json      # TypeScript configuration
+├── sample/                # Reference implementations (cleaned)
+│   ├── ai-chat-starter-react-sse/      # Main AI chat reference
+│   ├── ai-chat-starter-react-sse-e2e/  # E2E testing example
+│   ├── ai-ui-full-bundle/              # Complete UI specifications
+│   ├── reactflow-crewai-starter/       # Flow diagram components
+│   └── reactflow-crewai-starter-e2e/   # Flow testing
+├── docs/                  # Documentation
+│   └── working-documents/ # Implementation plans and specs
+│       ├── planning/      # Implementation plans
+│       └── sample-design/ # Design system documentation
+├── tasks/                 # Standalone tasks system
+├── .env.example           # Environment variables template
+├── .env                   # Local environment (created)
+├── docker-compose.yml     # Docker development setup
+├── Dockerfile             # Docker image definition
+├── pytest.ini            # pytest configuration
+├── requirements.txt       # Python dependencies (cleaned)
+└── README.md              # This file
 ```
 
 ## Quick Start
