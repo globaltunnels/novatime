@@ -1,6 +1,19 @@
+---
+standard_id: novatime-business-plan
+version: 1.0.0
+owner: Founder/CEO
+approvers: [Board of Directors, Lead Investors]
+last_review: 2025-08-26
+next_review: 2025-11-26
+status: Active
+related: [/docs/novatime_openapi_v1.1.yaml, /docs/novatime_storyboard.html, /specification/backend/django-coding.md]
+---
+
 # NovaTime — Business Plan, Marketing Plan, Design Specification & Implementation Plan (v1.0, Aug 26, 2025)
 
-*This document is written for both humans and AI agents. It combines the “why” (business & marketing) and the “how” (product/engineering spec) so an AI development pipeline can act directly on it. All deep technical details are moved to the **Appendix**.*
+*This document is written for both humans and AI agents. It combines the "why" (business & marketing) and the "how" (product/engineering spec) so an AI development pipeline can act directly on it. All deep technical details are moved to the **Appendix**.*
+
+*AI-generated content: This document was created with AI assistance for initial drafting and structure optimization.*
 
 ---
 
@@ -237,12 +250,79 @@ Dev → Staging → Prod with seeded demo data & synthetic load. Dark launches b
 
 ### 10.4 Channels & Tactics
 
-* **SEO**: comparison pages, schema FAQ, use-case hubs, Lighthouse 95+, and Search Essentials. ([Google for Developers][11])
-* **Content**: case studies (cycle time ↓, invoice corrections ↓), “manager’s playbook” for AI-coaching.
-* **PLG**: frictionless trial/onboarding; import from CSV/Clockify/Toggl.
-* **Partnerships**: accountants/QBO consultants; field ops associations.
-* **Paid**: retargeting on comparison pages; ROAS-driven experiments.
-* **Sales enablement**: demo using **Storyboard** and pre-baked dummy insights.
+> Goal: Make SEO on the front blog and coordinated media push a **first-class, technically ready** growth engine from Day 1.
+
+#### 10.4.1 Technical SEO Readiness (Pre‑launch checklist)
+- **Rendering & Delivery**
+  - Next.js **SSG/ISR** for all front blog and docs; render time budgets: LCP &lt; 2.5s, CLS &lt; 0.1, INP &lt; 200ms (desktop/mobile).
+  - Static HTML fallbacks for marketing pages; prefetch critical routes; HTTP/2 + Brotli; image CDNs with AVIF/WebP.
+- **Indexing**
+  - XML **sitemap** per locale, auto-regenerated on publish; **/robots.txt** with allowlist; **canonical** tags on all pages (self‑referential for single language).
+  - **hreflang** for localized pages (en, es, de… phased as i18n arrives).
+- **Metadata & Structured Data**
+  - **Open Graph** + **Twitter Cards** on all posts; author profiles with `sameAs`.
+  - **JSON‑LD**: `Article`, `FAQPage`, `HowTo`, `Product`, `BreadcrumbList`.
+  - **schema.org** for comparison pages and ROI calculator; FAQ schema on support/how‑to posts.
+- **Content Objects**
+  - Headless CMS (Wagtail/Strapi) with required fields: `title`, `slug`, `excerpt`, `hero_image`, `author`, `published_at`, `updated_at`, `reading_time`, `canonical_url`, `tags`, `category`, `locale`, `schema_type`, `faq_items[]`.
+  - **Change history** (changelog) entries are separate content type with versioning and diff links.
+- **Links & Taxonomy**
+  - Automated **related posts** (tag + vector similarity), **series** support, and **topic hubs** (e.g., Timesheet Automation, Billing Accuracy).
+  - **UTM** param enforcement on outbound CTAs; allowlist domains for external links.
+- **Feeds & Syndication**
+  - RSS/Atom feeds per category, per author; API endpoint for partner syndication.
+  - Newsletter export (Markdown → email HTML) via templates; weekly digest automation.
+- **Compliance & Accessibility**
+  - Cookie consent with analytics opt‑in; privacy‑safe analytics mode.
+  - WCAG 2.2 AA for all editorial templates (headings order, alt text required, focus states).
+- **Monitoring**
+  - Google Search Console & Bing Webmaster Tools verified; error budgets for Core Web Vitals.
+  - 404/410 handler with suggestions; backlink monitor; sitemap ping on publish.
+
+#### 10.4.2 Blog & Content Factory (Editorial Operating Model)
+- **Cadence**
+  - **Week 0–2:** Seed library of 12 pillar pages + 12 comparison pages.
+  - **Ongoing:** 3 posts/week (1 pillar, 1 comparison/alternative, 1 how‑to/FAQ). Monthly longform (2,500–4,000 words).
+- **Content Types**
+  - *Pillars*: “Timesheet automation”, “Billing accuracy”, “Agency utilization”.
+  - *Comparisons/Alternatives*: “Clockify vs Harvest vs NovaTime”, “Toggl alternatives for agencies”.
+  - *How‑to/FAQ*: “Close the books faster with approvals”, “Passkeys/WebAuthn for admins”.
+  - *Case Studies*: reductions in invoice corrections, approval time; include charts and data downloads.
+  - *Changelog/Product Updates*: monthly roundup with deep links; schema `BlogPosting` + `SoftwareApplication`.
+- **Seed Keyword Set (initial 18)**
+  - timesheet automation, automatic timesheets, draft timesheets, agency time tracking, billing accuracy, reduce invoice corrections, approval workflow software, utilization dashboard, time tracking for agencies, clockify alternative, harvest alternative, toggl alternative, connecteam alternative, geofenced time clock, kiosk time clock, privacy‑first time tracking, passkeys login, OIDC SSO time tracking
+- **Editorial Workflow (AI‑assisted)**
+  - Brief → Outline (AI) → Draft (AI+Human) → SME Review → Copy Edit → SEO QA → Publish → Repurpose (LinkedIn/Twitter/email).
+  - **Acceptance Criteria**: target keyword in H1, semantic siblings in H2/H3, 2+ internal links, 1+ external citation, FAQ schema when applicable, hero image with alt, reading time shown.
+
+#### 10.4.3 Media & PR Engine (Coordinated Push)
+- **Press Kit**: logo/brand assets, founder photos, product screenshots, 90‑sec demo, company boilerplate, one‑pager (problem/solution/metrics).
+- **Story Angles**
+  - *Privacy‑first time tracking* (no screenshots or keystrokes).
+  - *“Time that fills itself”* with human‑in‑the‑loop controls.
+  - *Explainable performance*, not surveillance—benchmarks & fairness.
+- **Tactics**
+  - Soft‑launch to design partners → embargoed briefings with tier‑2 outlets → broad launch.
+  - **Bylines** (founder POV) for HR/ops/agency pubs; **guest posts** and **podcast tour**.
+  - **Analyst relations** (lightweight) with comparison data and demo env.
+  - HARO/Connectively responses 3× weekly with prepared quotes and data snippets.
+- **Distribution**
+  - Social snippets (LinkedIn/Twitter) auto‑generated from CMS fields; UTM tracking.
+  - Syndication to Medium/Dev.to *after* canonical window to avoid duplicate content.
+
+#### 10.4.4 Measurement & Goals
+- **North‑star**: *Weekly submit rate* (D7 activation) from SEO‑sourced signups.
+- **SEO KPIs**: impressions, CTR, top‑10 keywords count, non‑brand share, time to first ranking (TTFR), organic signups, blog → trial CVR.
+- **Content KPIs**: publish velocity, “quality pass rate” (meets acceptance criteria), internal link coverage, dwell time, scroll depth.
+- **Media KPIs**: press mentions, referral signups, byline acceptances, podcast appearances.
+
+#### 10.4.5 Roles & RACI
+- **Owner**: Growth Lead (or PMM).  
+- **Contributors**: Content Lead, Designer, Engineer (SEO), Data Analyst, Founder (bylines).  
+- **AI Agents**: *Researcher* (SERP/content gaps), *Writer* (drafts), *Editor* (fact‑check & tone), *SEO QA* (schema, links).  
+- **Tooling**: Headless CMS, Next.js site, Git‑based workflow, Lighthouse CI, OpenAPI‑driven blog embeds (interactive charts), analytics dashboard with Looker/Metabase.
+
+> Deliverable by end of Week 2: **SEO‑ready blog system** with editorial templates, schema, feeds, press kit, and an initial 24‑post backlog (briefs + outlines) ready for drafting.
 
 ### 10.5 KPIs
 

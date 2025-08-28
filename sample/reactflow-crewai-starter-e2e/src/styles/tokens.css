@@ -1,0 +1,21 @@
+:root{
+  --bg:#0b0c0f;
+  --panel:#11131a;
+  --muted:#1a1d26;
+  --text:#e6e8ee;
+  --sub:#aab1c2;
+  --brand:#5b9dff;
+  --ok:#30d158;
+  --warn:#ffd60a;
+  --err:#ff453a;
+  --border:rgba(255,255,255,.08);
+  --radius:10px;
+  --space:8px;
+  --shadow:0 6px 18px rgba(0,0,0,.4);
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body,#root{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 ui-sans-serif,system-ui,Segoe UI,Roboto,Inter,sans-serif}
+button{font:inherit;color:inherit}
+input,select,textarea{font:inherit;color:inherit;background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:6px 8px}
+small{color:var(--sub)}
