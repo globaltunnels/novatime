@@ -13,26 +13,18 @@ backend/
 │   ├── wsgi.py              # WSGI application
 │   ├── asgi.py              # ASGI application
 │   └── __init__.py
-├── iam/                     # Identity Access Management app
-├── organizations/           # Multi-tenant organizations app
-├── tasks/                   # Task management app
-├── time_entries/            # Time tracking app
-├── timesheets/              # Timesheet management app
-├── projects/                # Project management app
-├── attendance/              # Frontline attendance app
-├── approvals/               # Approval workflows app
-├── billing/                 # Invoicing and billing app
-├── conversations/           # Chat and messaging app
-├── insights/                # Analytics and reporting app
-├── ai/                      # AI services integration app
-├── integrations/            # External integrations app
-├── seo/                     # SEO content management app
-├── abtests/                 # A/B testing framework app
+├── ai_services/             # AI services integration
+├── chat/                    # Real-time chat functionality
+├── iam/                     # Identity Access Management
+├── organizations/           # Multi-tenant organizations
+├── projects/                # Project management
+├── tasks/                   # Task management
+├── time_entries/            # Time tracking entries
+├── timesheets/              # Timesheet management
+├── websocket_server/       # WebSocket server for real-time features
 ├── static/                  # Static files
 ├── templates/               # Django templates
-├── media/                   # User-uploaded files
 ├── tests/                   # Test files
-├── .env                     # Environment variables
 ├── .env.example             # Environment variables template
 └── README.md                # This file
 ```
@@ -57,25 +49,17 @@ python manage.py runserver
 ## Apps Overview
 
 ### Core Business Logic
-- **iam**: Identity Access Manaagement, User management, authentication, and authorization
+- **ai_services**: AI services integration, automation, and smart suggestions
+- **chat**: Real-time chat and messaging functionality
+- **iam**: Identity Access Management, User management, authentication, and authorization
 - **organizations**: Multi-tenant organization management and RBAC
-- **tasks**: Task and project management with AI assignment
-- **timeentries**: Time tracking entries and idle detection
-- **timesheets**: Timesheet management, submission, and approvals
 - **projects**: Project management with timelines and dependencies
-
-### Specialized Features
-- **attendance**: Frontline attendance tracking and kiosk support
-- **approvals**: Approval workflows and exception handling
-- **billing**: Invoicing, rates, budgets, and payment integration
-- **conversations**: Real-time chat and messaging with @ai support
-- **insights**: Performance intelligence and analytics
-- **ai**: AI services, automation, and smart suggestions
+- **tasks**: Task management and assignment
+- **time_entries**: Time tracking entries and idle detection
+- **timesheets**: Timesheet management, submission, and approvals
 
 ### Supporting Systems
-- **integrations**: External service integrations (Jira, GitHub, Slack, etc.)
-- **seo**: SEO content management and marketing automation
-- **abtests**: A/B testing framework for optimization
+- **websocket_server**: WebSocket server for real-time features and communication
 
 ## App Structure Standards
 

@@ -13,33 +13,85 @@ NovaTime merges the best of Clockify, Toggl, Harvest, Connecteam, and Buddy Punc
 - **Unified Workflow**: Timers + shifts + chat + lightweight PM in one tool
 - **Privacy-First**: No surveillance, cohort-fair benchmarks, transparent controls
 
-## Project Structure (Cleaned & Optimized)
+## Project Structure
 
 ```
 novatime/ (Repository Root)
 ├── backend/               # Django application root
 │   ├── main/              # Django project settings
-│   │   ├── settings.py    # Main settings (cleaned up)
+│   │   ├── settings.py    # Main settings
 │   │   ├── urls.py        # URL configuration
 │   │   ├── wsgi.py        # WSGI application
 │   │   ├── asgi.py        # ASGI application
 │   │   └── __init__.py
-│   ├── tests/             # Backend test files (fixed settings)
-│   │   ├── simple_db_test.py
-│   │   └── test_db_connection.py
+│   ├── ai_services/       # AI services integration
+│   │   ├── models.py      # AI service models
+│   │   ├── views.py       # AI service API endpoints
+│   │   ├── serializers.py # AI service serializers
+│   │   ├── services.py    # AI service business logic
+│   │   └── urls.py        # AI service URL patterns
+│   ├── chat/              # Real-time chat functionality
+│   │   ├── models.py      # Chat models
+│   │   ├── views.py       # Chat API endpoints
+│   │   ├── serializers.py # Chat serializers
+│   │   └── signals.py     # Chat signals
+│   ├── iam/               # Identity Access Management
+│   │   ├── models.py      # User and authentication models
+│   │   ├── views.py       # Authentication views
+│   │   ├── serializers.py # User serializers
+│   │   ├── admin.py       # Django admin configuration
+│   │   └── urls.py        # IAM URL patterns
+│   ├── organizations/     # Multi-tenant organizations
+│   │   ├── models.py      # Organization models
+│   │   ├── views.py       # Organization API endpoints
+│   │   ├── admin.py       # Organization admin
+│   │   └── tests.py       # Organization tests
+│   ├── projects/          # Project management
+│   │   ├── models.py      # Project models
+│   │   ├── views.py       # Project API endpoints
+│   │   ├── serializers.py # Project serializers
+│   │   ├── admin.py       # Project admin
+│   │   ├── urls.py        # Project URL patterns
+│   │   └── tests.py       # Project tests
+│   ├── tasks/             # Task management
+│   │   ├── models.py      # Task models
+│   │   ├── views.py       # Task API endpoints
+│   │   ├── admin.py       # Task admin
+│   │   └── tests.py       # Task tests
+│   ├── time_entries/      # Time tracking entries
+│   │   ├── models.py      # Time entry models
+│   │   ├── views.py       # Time entry API endpoints
+│   │   ├── admin.py       # Time entry admin
+│   │   └── tests.py       # Time entry tests
+│   ├── timesheets/        # Timesheet management
+│   │   ├── models.py      # Timesheet models
+│   │   ├── views.py       # Timesheet API endpoints
+│   │   ├── serializers.py # Timesheet serializers
+│   │   ├── urls.py        # Timesheet URL patterns
+│   │   └── tests.py       # Timesheet tests
+│   ├── websocket_server/ # WebSocket server for real-time features
+│   │   ├── consumers.py   # WebSocket consumers
+│   │   └── routing.py     # WebSocket routing
+│   ├── tests/             # Backend test files
+│   │   ├── conftest.py    # Test configuration
+│   │   ├── pytest.ini     # Pytest configuration
+│   │   └── test_*.py      # Individual test files
 │   ├── static/            # Static files
 │   ├── templates/         # Django templates
+│   ├── .env.example       # Environment variables template
+│   ├── requirements.txt   # Python dependencies
 │   └── manage.py          # Django management script
-├── frontend/              # React frontend (design system based)
+├── frontend/              # React frontend
 │   ├── public/            # Static assets
 │   │   ├── icons/         # Icon assets
 │   │   └── images/        # Image assets
 │   ├── src/               # Source code
-│   │   ├── components/    # Organized by type
+│   │   ├── components/    # UI components
 │   │   │   ├── ui/        # Basic UI components
 │   │   │   ├── layout/    # Layout components
 │   │   │   ├── forms/     # Form components
-│   │   │   └── charts/    # Chart components
+│   │   │   ├── charts/    # Chart components
+│   │   │   └── timesheet/ # Timesheet-specific components
 │   │   ├── pages/         # Feature-based pages
 │   │   │   ├── auth/      # Authentication pages
 │   │   │   ├── dashboard/ # Main dashboard
@@ -47,37 +99,29 @@ novatime/ (Repository Root)
 │   │   │   ├── time/      # Time tracking
 │   │   │   ├── approvals/ # Approval workflows
 │   │   │   ├── reports/   # Reports and analytics
-│   │   │   ├── chat/      # Team chat with @ai
+│   │   │   ├── chat/      # Team chat
 │   │   │   └── admin/     # Admin interfaces
 │   │   ├── hooks/         # Custom React hooks
 │   │   ├── services/      # API services
-│   │   ├── styles/        # CSS with design tokens
-│   │   │   ├── index.css  # Main stylesheet
-│   │   │   └── tokens.css # Design token definitions
+│   │   ├── styles/        # CSS styles
 │   │   ├── utils/         # Utility functions
-│   │   └── types/         # TypeScript type definitions
+│   │   └── types/         # TypeScript definitions
+│   ├── tests/             # Frontend test files
 │   ├── package.json       # Node.js dependencies
-│   ├── vite.config.ts     # Vite configuration
-│   ├── tailwind.config.js # Tailwind CSS config with tokens
 │   └── tsconfig.json      # TypeScript configuration
-├── sample/                # Reference implementations (cleaned)
-│   ├── ai-chat-starter-react-sse/      # Main AI chat reference
-│   ├── ai-chat-starter-react-sse-e2e/  # E2E testing example
-│   ├── ai-ui-full-bundle/              # Complete UI specifications
-│   ├── reactflow-crewai-starter/       # Flow diagram components
-│   └── reactflow-crewai-starter-e2e/   # Flow testing
+├── playwright/            # End-to-end testing
+│   ├── tests/             # E2E test files
+│   │   └── pages/         # Page object models
+│   ├── playwright-report/ # Test reports
+│   └── test-results/      # Test artifacts
 ├── docs/                  # Documentation
-│   └── working-documents/ # Implementation plans and specs
-│       ├── planning/      # Implementation plans
-│       └── sample-design/ # Design system documentation
 ├── tasks/                 # Standalone tasks system
-├── .env.example           # Environment variables template
-├── .env                   # Local environment (created)
-├── docker-compose.yml     # Docker development setup
-├── Dockerfile             # Docker image definition
-├── pytest.ini            # pytest configuration
-├── requirements.txt       # Python dependencies (cleaned)
-└── README.md              # This file
+├── deploy/                # Docker deployment files
+│   ├── docker-compose.yml # Docker development setup
+│   └── Dockerfile         # Docker image definition
+├── .gitignore            # Git ignore rules
+├── .python-version       # Python version specification
+└── README.md             # This file
 ```
 
 ## Quick Start
@@ -98,11 +142,14 @@ pyenv virtualenv 3.12.11 novatime
 pyenv local novatime
 
 # Install dependencies
-pip install -r requirements.txt
+pip install -r backend/requirements.txt
 
 # Set up environment variables
-cp .env.example .env
-# Edit .env with your database and other settings
+cp backend/.env.example backend/.env
+# Edit backend/.env with your database and other settings
+
+# Navigate to backend directory
+cd backend
 
 # Run migrations
 python manage.py migrate
@@ -116,6 +163,8 @@ python manage.py runserver
 
 ### Data Migration (from Oracle)
 
+*Note: Migration script is under development. Please check with the development team for current migration procedures.*
+
 ```bash
 # Set Oracle environment variables in .env
 export ORACLE_USERNAME="amprod"
@@ -124,11 +173,9 @@ export ORACLE_HOST="apdev.cpxgji6lqffb.us-east-1.rds.amazonaws.com"
 export ORACLE_PORT="1521"
 export ORACLE_SERVICE="ORCL"
 
-# Run migration
-python migration_script.py
-
-# Or run dry-run first
-python migration_script.py --dry-run
+# Migration script will be available in the root directory
+# python migration_script.py
+# python migration_script.py --dry-run
 ```
 
 ### Frontend Setup
@@ -176,9 +223,8 @@ The project uses GitHub Actions for continuous integration with:
 
 ## Documentation
 
-- [Business Plan & Technical Specification](docs/planning/)
-- [API Documentation](docs/novatime_openapi_v1.1.yaml)
-- [Migration Guide](migration_plan.md)
+- [Business Plan & Technical Specification](docs/working_documents/planning/)
+- [API Documentation](docs/specification/backend/api/)
 - [Architecture Overview](docs/)
 
 ## Contributing
