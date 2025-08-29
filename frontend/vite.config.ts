@@ -5,6 +5,14 @@ import { resolve } from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './tests/setup.ts',
+    coverage: {
+      reporter: ['text', 'json', 'html'],
+    },
+  },
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
