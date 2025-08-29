@@ -66,14 +66,17 @@ INSTALLED_APPS = [
     'health_check.storage',
     'django_prometheus',
 
-    # Local apps (temporarily disabled for initial setup)
-    # 'iam',
-    # 'organizations',
-    # 'tasks',
-    # 'time_entries',
-    # 'timesheets',
+    # Local apps
+    'iam',
+    'organizations',
+    'tasks',
+    'time_entries',
+    'timesheets',
+    'projects',
+    'chat',
+    'ai_services',
+    # Additional apps to be created later
     # 'attendance',
-    # 'projects',
     # 'approvals',
     # 'billing',
     # 'conversations',
@@ -186,6 +189,9 @@ MEDIA_ROOT = BASE_DIR / 'backend' / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Custom User Model
+AUTH_USER_MODEL = 'iam.User'
+
 # Django REST Framework
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -217,6 +223,45 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'ROTATE_REFRESH_TOKENS': True,
     'BLACKLIST_AFTER_ROTATION': True,
+    'UPDATE_LAST_LOGIN': True,
+    'ALGORITHM': 'HS256',
+    'SIGNING_KEY': SECRET_KEY,
+    'VERIFYING_KEY': None,
+    'AUTH_HEADER_TYPES': ('Bearer',),
+    'USER_ID_FIELD': 'id',
+    'USER_ID_CLAIM': 'user_id',
+    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
+    'TOKEN_TYPE_CLAIM': 'token_type',
+}
+
+# Email settings
+EMAIL_BACKEND = config('EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
+EMAIL_HOST = config('EMAIL_HOST', default='localhost')
+EMAIL_PORT = config('EMAIL_PORT', default=587, cast=int)
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=bool)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='noreply@novatime.dev')
+
+# Frontend URL for email links
+FRONTEND_URL = config('FRONTEND_URL', default='http://localhost:3000')
+
+# Allauth settings
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
+ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 300
+
+# OAuth2 settings
+OAUTH2_PROVIDER = {
+    'SCOPES': {
+        'read': 'Read scope',
+        'write': 'Write scope',
+    },
+    'ACCESS_TOKEN_EXPIRE_SECONDS': 3600,
+    'REFRESH_TOKEN_EXPIRE_SECONDS': 86400,
 }
 
 # CORS settings

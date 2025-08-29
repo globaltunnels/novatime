@@ -1,67 +1,142 @@
-import React from 'react'
+import { useState } from 'react';
+import { AppShell } from './components/layout';
+import { TimerCard, TaskCard, Card, CardHeader, CardTitle, CardContent, Button } from './components/ui';
 
 function App() {
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+  
+  // Mock data for demonstration
+  const sampleTask = {
+    id: '1',
+    title: 'Implement user authentication',
+    description: 'Add OAuth2 and JWT token support for secure user authentication',
+    status: 'in_progress' as const,
+    priority: 'high' as const,
+    estimatedHours: 8,
+    assignee: {
+      id: '1',
+      name: 'John Doe',
+      avatar: undefined
+    },
+    dueDate: new Date('2025-08-30'),
+    labels: [
+      { id: '1', name: 'Backend', color: '#3b82f6' },
+      { id: '2', name: 'Security', color: '#ef4444' }
+    ]
+  };
+  
   return (
-    <div className="min-h-screen bg-bg text-text">
-      <div className="container mx-auto px-4 py-8">
-        <header className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-primary mb-4">
-            NovaTime
+    <AppShell 
+      sidebarOpen={sidebarOpen} 
+      onSidebarToggle={() => setSidebarOpen(!sidebarOpen)}
+    >
+      <div className="p-6 max-w-7xl mx-auto">
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold text-[var(--text)] mb-2">
+            Welcome to NovaTime
           </h1>
-          <p className="text-lg text-text-muted">
-            AI-first time tracking and project management platform
+          <p className="text-[var(--text-muted)]">
+            Your AI-first time tracking and project management platform
           </p>
-        </header>
+        </div>
         
-        <main className="max-w-4xl mx-auto">
-          <div className="card">
-            <h2 className="text-2xl font-semibold mb-4">Welcome to NovaTime</h2>
-            <p className="text-text-muted mb-6">
-              Your unified platform for time tracking, task management, and team collaboration.
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="card">
-                <h3 className="text-lg font-semibold mb-2 text-time-active">
-                  ⏱️ Time Tracking
-                </h3>
-                <p className="text-sm text-text-muted">
-                  Smart timers with AI-powered timesheet generation
-                </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          {/* Active Timer */}
+          <Card>
+            <CardHeader>
+              <CardTitle>Active Timer</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <TimerCard
+                isRunning={true}
+                project={{
+                  id: '1',
+                  name: 'NovaTime Development',
+                  color: '#22c55e'
+                }}
+                task={{
+                  id: '1',
+                  title: 'Frontend Component Library'
+                }}
+                description="Building reusable UI components with design tokens"
+                elapsed="02:34:12"
+                onStop={() => console.log('Stop timer')}
+                onPause={() => console.log('Pause timer')}
+                onEdit={() => console.log('Edit timer')}
+              />
+            </CardContent>
+          </Card>
+          
+          {/* Recent Activity */}
+          <Card>
+            <CardHeader>
+              <CardTitle>Today's Progress</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center">
+                  <span className="text-[var(--text-muted)]">Total Time</span>
+                  <span className="font-mono font-bold text-lg text-[var(--text)]">07:42:30</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-[var(--text-muted)]">Billable Hours</span>
+                  <span className="font-mono font-bold text-lg text-[var(--success)]">06:15:45</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-[var(--text-muted)]">Tasks Completed</span>
+                  <span className="font-bold text-lg text-[var(--text)]">3</span>
+                </div>
               </div>
-              
-              <div className="card">
-                <h3 className="text-lg font-semibold mb-2 text-primary">
-                  📋 Task Management
-                </h3>
-                <p className="text-sm text-text-muted">
-                  Kanban boards and project timelines with AI insights
-                </p>
-              </div>
-              
-              <div className="card">
-                <h3 className="text-lg font-semibold mb-2 text-success">
-                  🤖 AI Assistant
-                </h3>
-                <p className="text-sm text-text-muted">
-                  Chat with @ai for smart suggestions and automation
-                </p>
-              </div>
-            </div>
-            
-            <div className="mt-8 flex gap-4 justify-center">
-              <button className="btn btn-primary">
-                Get Started
-              </button>
-              <button className="btn btn-secondary">
-                Learn More
-              </button>
-            </div>
+            </CardContent>
+          </Card>
+        </div>
+        
+        {/* Current Tasks */}
+        <div className="mb-8">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-2xl font-semibold text-[var(--text)]">Current Tasks</h2>
+            <Button variant="primary">
+              ➕ Add Task
+            </Button>
           </div>
-        </main>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <TaskCard
+              task={sampleTask}
+              onTaskClick={(id) => console.log('Open task:', id)}
+              onStartTimer={(id) => console.log('Start timer for task:', id)}
+            />
+            
+            <TaskCard
+              task={{
+                ...sampleTask,
+                id: '2',
+                title: 'Design timesheet interface',
+                status: 'todo',
+                priority: 'medium',
+                labels: [{ id: '3', name: 'Design', color: '#8b5cf6' }]
+              }}
+              onTaskClick={(id) => console.log('Open task:', id)}
+              onStartTimer={(id) => console.log('Start timer for task:', id)}
+            />
+            
+            <TaskCard
+              task={{
+                ...sampleTask,
+                id: '3',
+                title: 'Setup CI/CD pipeline',
+                status: 'done',
+                priority: 'low',
+                labels: [{ id: '4', name: 'DevOps', color: '#10b981' }]
+              }}
+              onTaskClick={(id) => console.log('Open task:', id)}
+              onStartTimer={(id) => console.log('Start timer for task:', id)}
+            />
+          </div>
+        </div>
       </div>
-    </div>
-  )
+    </AppShell>
+  );
 }
 
-export default App
+export default App;

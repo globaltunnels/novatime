@@ -34,8 +34,13 @@ urlpatterns = [
 
     # Authentication
     path('accounts/', include('allauth.urls')),
-    # path('auth/', include('iam.urls')),  # Temporarily disabled
+    path('api/v1/auth/', include('iam.urls')),  # Enable IAM URLs
     path('oauth/', include('oauth2_provider.urls', namespace='oauth2_provider')),
+
+    # API v1 - Individual modules
+    path('api/v1/timesheets/', include('timesheets.urls')),
+    path('api/v1/projects/', include('projects.urls')),
+    path('api/v1/ai/', include('ai_services.urls')),
 
     # API v1 (temporarily disabled for initial setup)
     # path('api/v1/', include([
