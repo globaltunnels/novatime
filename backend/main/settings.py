@@ -45,13 +45,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 'django.contrib.gis',  # For geospatial features (temporarily disabled)
 
-    # Third-party apps
-    'rest_framework',
-    'rest_framework_simplejwt',
-    'rest_framework_simplejwt.token_blacklist',
+    # Third-party apps (temporarily disabled PostgreSQL-specific ones)
+    # 'rest_framework',  # Temporarily disabled due to PostgreSQL dependency
+    # 'rest_framework_simplejwt',  # Temporarily disabled
+    # 'rest_framework_simplejwt.token_blacklist',  # Temporarily disabled
     'corsheaders',
     'django_filters',
-    'drf_spectacular',
+    # 'drf_spectacular',  # Temporarily disabled
     'channels',
     'allauth',
     'allauth.account',
@@ -60,11 +60,11 @@ INSTALLED_APPS = [
     'storages',
     'waffle',
     'auditlog',
-    'health_check',
-    'health_check.db',
-    'health_check.cache',
-    'health_check.storage',
-    'django_prometheus',
+    # 'health_check',  # Temporarily disabled
+    # 'health_check.db',  # Temporarily disabled
+    # 'health_check.cache',  # Temporarily disabled
+    # 'health_check.storage',  # Temporarily disabled
+    # 'django_prometheus',  # Temporarily disabled
 
     # Local apps
     'iam',
@@ -131,15 +131,8 @@ ASGI_APPLICATION = 'main.asgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME', default='novatime'),
-        'USER': config('DB_USER', default='novatime'),
-        'PASSWORD': config('DB_PASSWORD', default='password'),
-        'HOST': config('DB_HOST', default='localhost'),
-        'PORT': config('DB_PORT', default='5432'),
-        'OPTIONS': {
-            'options': '-c search_path=novatime',
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 

@@ -1,0 +1,156 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - generic [ref=e5]:
+    - generic [ref=e7]:
+      - generic [ref=e8]: "N"
+      - generic [ref=e9]:
+        - heading "NovaTime" [level=1] [ref=e10]
+        - paragraph [ref=e11]: Time that fills itself
+    - navigation [ref=e12]:
+      - link "🏠 Home" [ref=e13] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e14] [cursor=pointer]: 🏠
+        - generic [ref=e15] [cursor=pointer]: Home
+      - link "📋 Timesheet" [ref=e16] [cursor=pointer]:
+        - /url: /timesheet
+        - generic [ref=e17] [cursor=pointer]: 📋
+        - generic [ref=e18] [cursor=pointer]: Timesheet
+      - link "📁 Projects" [ref=e19] [cursor=pointer]:
+        - /url: /projects
+        - generic [ref=e20] [cursor=pointer]: 📁
+        - generic [ref=e21] [cursor=pointer]: Projects
+      - link "✅ Tasks 12" [ref=e22] [cursor=pointer]:
+        - /url: /tasks
+        - generic [ref=e23] [cursor=pointer]: ✅
+        - generic [ref=e24] [cursor=pointer]: Tasks
+        - generic [ref=e25] [cursor=pointer]: "12"
+      - link "📅 Schedule" [ref=e26] [cursor=pointer]:
+        - /url: /schedule
+        - generic [ref=e27] [cursor=pointer]: 📅
+        - generic [ref=e28] [cursor=pointer]: Schedule
+      - link "✋ Approvals 3" [ref=e29] [cursor=pointer]:
+        - /url: /approvals
+        - generic [ref=e30] [cursor=pointer]: ✋
+        - generic [ref=e31] [cursor=pointer]: Approvals
+        - generic [ref=e32] [cursor=pointer]: "3"
+      - link "📊 Reports" [ref=e33] [cursor=pointer]:
+        - /url: /reports
+        - generic [ref=e34] [cursor=pointer]: 📊
+        - generic [ref=e35] [cursor=pointer]: Reports
+      - link "💬 Chat" [ref=e36] [cursor=pointer]:
+        - /url: /chat
+        - generic [ref=e37] [cursor=pointer]: 💬
+        - generic [ref=e38] [cursor=pointer]: Chat
+      - link "⚙️ Admin" [ref=e39] [cursor=pointer]:
+        - /url: /admin
+        - generic [ref=e40] [cursor=pointer]: ⚙️
+        - generic [ref=e41] [cursor=pointer]: Admin
+    - generic [ref=e43]:
+      - generic [ref=e44]: JD
+      - generic [ref=e45]:
+        - paragraph [ref=e46]: John Doe
+        - paragraph [ref=e47]: john@example.com
+    - button "←" [ref=e48] [cursor=pointer]
+  - generic [ref=e49]:
+    - banner [ref=e50]:
+      - heading "Today - Wednesday, Aug 28" [level=2] [ref=e52]
+      - generic [ref=e53]:
+        - button "⏱️ Start Timer" [ref=e54] [cursor=pointer]
+        - button "➕ Add Task" [ref=e55] [cursor=pointer]
+        - generic [ref=e56]:
+          - button "🔔" [ref=e57] [cursor=pointer]
+          - generic [ref=e58]: "3"
+        - button "🌙" [ref=e59] [cursor=pointer]
+        - generic [ref=e60]: JD
+    - main [ref=e61]:
+      - generic [ref=e62]:
+        - generic [ref=e63]:
+          - heading "Welcome to NovaTime" [level=1] [ref=e64]
+          - paragraph [ref=e65]: Your AI-first time tracking and project management platform
+        - generic [ref=e66]:
+          - generic [ref=e67]:
+            - heading "Active Timer" [level=3] [ref=e69]
+            - generic [ref=e73]:
+              - generic [ref=e74]:
+                - generic [ref=e75]:
+                  - generic [ref=e77]: NovaTime Development
+                  - generic [ref=e78]: •
+                  - generic [ref=e79]: Frontend Component Library
+                - paragraph [ref=e80]: Building reusable UI components with design tokens
+                - generic [ref=e81]:
+                  - generic [ref=e82]: 02:34:12
+                  - generic [ref=e83]: Running
+              - generic [ref=e84]:
+                - button "Pause" [ref=e85] [cursor=pointer]
+                - button "Stop" [ref=e86] [cursor=pointer]
+                - button "Edit" [ref=e87] [cursor=pointer]
+          - generic [ref=e88]:
+            - heading "Today's Progress" [level=3] [ref=e90]
+            - generic [ref=e92]:
+              - generic [ref=e93]:
+                - generic [ref=e94]: Total Time
+                - generic [ref=e95]: 07:42:30
+              - generic [ref=e96]:
+                - generic [ref=e97]: Billable Hours
+                - generic [ref=e98]: 06:15:45
+              - generic [ref=e99]:
+                - generic [ref=e100]: Tasks Completed
+                - generic [ref=e101]: "3"
+        - generic [ref=e102]:
+          - generic [ref=e103]:
+            - heading "Current Tasks" [level=2] [ref=e104]
+            - button "➕ Add Task" [ref=e105] [cursor=pointer]
+          - generic [ref=e106]:
+            - generic [ref=e108] [cursor=pointer]:
+              - generic [ref=e109] [cursor=pointer]:
+                - generic [ref=e110] [cursor=pointer]: In Progress
+                - generic [ref=e111] [cursor=pointer]: High
+              - heading "Implement user authentication" [level=3] [ref=e112] [cursor=pointer]
+              - paragraph [ref=e113] [cursor=pointer]: Add OAuth2 and JWT token support for secure user authentication
+              - generic [ref=e114] [cursor=pointer]:
+                - generic [ref=e115] [cursor=pointer]: Backend
+                - generic [ref=e116] [cursor=pointer]: Security
+              - generic [ref=e117] [cursor=pointer]:
+                - generic [ref=e118] [cursor=pointer]:
+                  - generic [ref=e119] [cursor=pointer]: ⏱️ 8h
+                  - generic [ref=e120] [cursor=pointer]: 📅 8/29/2025
+                - generic [ref=e121] [cursor=pointer]:
+                  - generic [ref=e122] [cursor=pointer]:
+                    - generic [ref=e123] [cursor=pointer]: J
+                    - generic [ref=e124] [cursor=pointer]: John Doe
+                  - button "▶️" [ref=e125] [cursor=pointer]
+            - generic [ref=e127] [cursor=pointer]:
+              - generic [ref=e128] [cursor=pointer]:
+                - generic [ref=e129] [cursor=pointer]: To Do
+                - generic [ref=e130] [cursor=pointer]: Medium
+              - heading "Design timesheet interface" [level=3] [ref=e131] [cursor=pointer]
+              - paragraph [ref=e132] [cursor=pointer]: Add OAuth2 and JWT token support for secure user authentication
+              - generic [ref=e134] [cursor=pointer]: Design
+              - generic [ref=e135] [cursor=pointer]:
+                - generic [ref=e136] [cursor=pointer]:
+                  - generic [ref=e137] [cursor=pointer]: ⏱️ 8h
+                  - generic [ref=e138] [cursor=pointer]: 📅 8/29/2025
+                - generic [ref=e139] [cursor=pointer]:
+                  - generic [ref=e140] [cursor=pointer]:
+                    - generic [ref=e141] [cursor=pointer]: J
+                    - generic [ref=e142] [cursor=pointer]: John Doe
+                  - button "▶️" [ref=e143] [cursor=pointer]
+            - generic [ref=e145] [cursor=pointer]:
+              - generic [ref=e146] [cursor=pointer]:
+                - generic [ref=e147] [cursor=pointer]: Done
+                - generic [ref=e148] [cursor=pointer]: Low
+              - heading "Setup CI/CD pipeline" [level=3] [ref=e149] [cursor=pointer]
+              - paragraph [ref=e150] [cursor=pointer]: Add OAuth2 and JWT token support for secure user authentication
+              - generic [ref=e152] [cursor=pointer]: DevOps
+              - generic [ref=e153] [cursor=pointer]:
+                - generic [ref=e154] [cursor=pointer]:
+                  - generic [ref=e155] [cursor=pointer]: ⏱️ 8h
+                  - generic [ref=e156] [cursor=pointer]: 📅 8/29/2025
+                - generic [ref=e157] [cursor=pointer]:
+                  - generic [ref=e158] [cursor=pointer]:
+                    - generic [ref=e159] [cursor=pointer]: J
+                    - generic [ref=e160] [cursor=pointer]: John Doe
+                  - button "▶️" [ref=e161] [cursor=pointer]
+```

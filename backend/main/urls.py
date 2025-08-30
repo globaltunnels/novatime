@@ -18,29 +18,29 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
+# from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView  # Temporarily disabled
 
 urlpatterns = [
     # Admin
     path('admin/', admin.site.urls),
 
-    # API documentation
-    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
-    path('api/schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
-    path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
+    # API documentation (temporarily disabled)
+    # path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    # path('api/schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+    # path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
 
     # Health checks
     path('health/', include('health_check.urls')),
 
-    # Authentication
-    path('accounts/', include('allauth.urls')),
-    path('api/v1/auth/', include('iam.urls')),  # Enable IAM URLs
-    path('oauth/', include('oauth2_provider.urls', namespace='oauth2_provider')),
+    # Authentication (temporarily disabled)
+    # path('accounts/', include('allauth.urls')),
+    # path('api/v1/auth/', include('iam.urls')),  # Enable IAM URLs
+    # path('oauth/', include('oauth2_provider.urls', namespace='oauth2_provider')),
 
-    # API v1 - Individual modules
-    path('api/v1/timesheets/', include('timesheets.urls')),
-    path('api/v1/projects/', include('projects.urls')),
-    path('api/v1/ai/', include('ai_services.urls')),
+    # API v1 - Individual modules (temporarily disabled)
+    # path('api/v1/timesheets/', include('timesheets.urls')),
+    # path('api/v1/projects/', include('projects.urls')),
+    # path('api/v1/ai/', include('ai_services.urls')),
 
     # API v1 (temporarily disabled for initial setup)
     # path('api/v1/', include([

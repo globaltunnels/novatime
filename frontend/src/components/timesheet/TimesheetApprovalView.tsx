@@ -142,43 +142,43 @@ export const TimesheetApprovalView: React.FC<TimesheetApprovalProps> = ({ worksp
 
   if (loading) {
     return (
-      <div className=\"flex items-center justify-center h-64\">
-        <div className=\"text-lg text-[var(--text-muted)]\">Loading pending approvals...</div>
+      <div className="flex items-center justify-center h-64">
+        <div className="text-lg text-[var(--text-muted)]">Loading pending approvals...</div>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className=\"flex items-center justify-center h-64\">
-        <div className=\"text-lg text-[var(--error)]\">{error}</div>
+      <div className="flex items-center justify-center h-64">
+        <div className="text-lg text-[var(--error)]">{error}</div>
       </div>
     );
   }
 
   return (
-    <div className=\"space-y-6\">
-      <div className=\"flex items-center justify-between\">
-        <h1 className=\"text-2xl font-bold text-[var(--text)]\">
+    <div className="space-y-6">
+      <div className="flex items-center justify-between">
+        <h1 className="text-2xl font-bold text-[var(--text)]">
           Timesheet Approvals
         </h1>
-        <div className=\"text-sm text-[var(--text-muted)]\">
+        <div className="text-sm text-[var(--text-muted)]">
           {pendingTimesheets.length} pending approval{pendingTimesheets.length !== 1 ? 's' : ''}
         </div>
       </div>
 
       {pendingTimesheets.length === 0 ? (
         <Card>
-          <CardContent className=\"py-12 text-center\">
-            <div className=\"text-6xl mb-4\">✅</div>
-            <div className=\"text-xl font-medium text-[var(--text)] mb-2\">All caught up!</div>
-            <div className=\"text-[var(--text-muted)]\">
+          <CardContent className="py-12 text-center">
+            <div className="text-6xl mb-4">✅</div>
+            <div className="text-xl font-medium text-[var(--text)] mb-2">All caught up!</div>
+            <div className="text-[var(--text-muted)]">
               No timesheets are currently pending your approval.
             </div>
           </CardContent>
         </Card>
       ) : (
-        <div className=\"space-y-4\">
+        <div className="space-y-4">
           {pendingTimesheets.map((timesheet) => (
             <TimesheetApprovalCard
               key={timesheet.id}
@@ -242,18 +242,18 @@ const TimesheetApprovalCard: React.FC<TimesheetApprovalCardProps> = ({
   return (
     <Card>
       <CardHeader>
-        <div className=\"flex items-center justify-between\">
+        <div className="flex items-center justify-between">
           <div>
-            <CardTitle className=\"text-lg\">{timesheet.user_name}</CardTitle>
-            <div className=\"text-sm text-[var(--text-muted)] mt-1\">
+            <CardTitle className="text-lg">{timesheet.user_name}</CardTitle>
+            <div className="text-sm text-[var(--text-muted)] mt-1">
               {timesheet.user_email} • {timesheet.workspace_name}
             </div>
           </div>
-          <div className=\"text-right\">
-            <div className=\"text-sm text-[var(--text-muted)]\">
+          <div className="text-right">
+            <div className="text-sm text-[var(--text-muted)]">
               {formatDate(timesheet.start_date)} - {formatDate(timesheet.end_date)}
             </div>
-            <div className=\"text-xs text-[var(--text-muted)] mt-1\">
+            <div className="text-xs text-[var(--text-muted)] mt-1">
               Submitted {formatDateTime(timesheet.submitted_at)}
             </div>
           </div>
@@ -262,37 +262,37 @@ const TimesheetApprovalCard: React.FC<TimesheetApprovalCardProps> = ({
       
       <CardContent>
         {/* Hours Summary */}
-        <div className=\"grid grid-cols-2 md:grid-cols-4 gap-4 mb-6\">
-          <div className=\"text-center\">
-            <div className=\"text-2xl font-bold text-[var(--primary)]\">{timesheet.total_hours}h</div>
-            <div className=\"text-sm text-[var(--text-muted)]\">Total Hours</div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+          <div className="text-center">
+            <div className="text-2xl font-bold text-[var(--primary)]">{timesheet.total_hours}h</div>
+            <div className="text-sm text-[var(--text-muted)]">Total Hours</div>
           </div>
-          <div className=\"text-center\">
-            <div className=\"text-2xl font-bold text-[var(--success)]\">{timesheet.billable_hours}h</div>
-            <div className=\"text-sm text-[var(--text-muted)]\">Billable Hours</div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-[var(--success)]">{timesheet.billable_hours}h</div>
+            <div className="text-sm text-[var(--text-muted)]">Billable Hours</div>
           </div>
-          <div className=\"text-center\">
-            <div className=\"text-2xl font-bold text-[var(--warning)]\">{timesheet.overtime_hours}h</div>
-            <div className=\"text-sm text-[var(--text-muted)]\">Overtime</div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-[var(--warning)]">{timesheet.overtime_hours}h</div>
+            <div className="text-sm text-[var(--text-muted)]">Overtime</div>
           </div>
-          <div className=\"text-center\">
-            <div className=\"text-2xl font-bold text-[var(--info)]\">{billablePercentage}%</div>
-            <div className=\"text-sm text-[var(--text-muted)]\">Billable %</div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-[var(--info)]">{billablePercentage}%</div>
+            <div className="text-sm text-[var(--text-muted)]">Billable %</div>
           </div>
         </div>
 
         {/* Notes */}
         {timesheet.notes && (
-          <div className=\"mb-6 p-4 bg-[var(--bg-elev)] rounded-lg border border-[var(--border)]\">
-            <div className=\"text-sm font-medium text-[var(--text)] mb-2\">Employee Notes:</div>
-            <div className=\"text-sm text-[var(--text-muted)]\">{timesheet.notes}</div>
+          <div className="mb-6 p-4 bg-[var(--bg-elev)] rounded-lg border border-[var(--border)]">
+            <div className="text-sm font-medium text-[var(--text)] mb-2">Employee Notes:</div>
+            <div className="text-sm text-[var(--text-muted)]">{timesheet.notes}</div>
           </div>
         )}
 
         {/* Comments Input */}
         {showComments && (
-          <div className=\"mb-6 p-4 bg-[var(--bg-elev)] rounded-lg border border-[var(--border)]\">
-            <div className=\"text-sm font-medium text-[var(--text)] mb-2\">
+          <div className="mb-6 p-4 bg-[var(--bg-elev)] rounded-lg border border-[var(--border)]">
+            <div className="text-sm font-medium text-[var(--text)] mb-2">
               {actionType === 'reject' ? 'Rejection Reason:' : 'Comments:'}
             </div>
             <textarea
@@ -302,13 +302,13 @@ const TimesheetApprovalCard: React.FC<TimesheetApprovalCardProps> = ({
                 ? 'Please provide a reason for rejection...' 
                 : 'Add comments (optional)...'
               }
-              className=\"w-full p-3 border border-[var(--border)] rounded-md bg-[var(--bg)] text-[var(--text)] placeholder-[var(--text-muted)] focus:border-[var(--primary)] focus:outline-none\"
+              className="w-full p-3 border border-[var(--border)] rounded-md bg-[var(--bg)] text-[var(--text)] placeholder-[var(--text-muted)] focus:border-[var(--primary)] focus:outline-none"
               rows={3}
             />
-            <div className=\"flex justify-end space-x-2 mt-3\">
+            <div className="flex justify-end space-x-2 mt-3">
               <Button 
-                variant=\"ghost\" 
-                size=\"sm\"
+                variant="ghost" 
+                size="sm"
                 onClick={() => {
                   setShowComments(false);
                   setComments('');
@@ -318,7 +318,7 @@ const TimesheetApprovalCard: React.FC<TimesheetApprovalCardProps> = ({
                 Cancel
               </Button>
               <Button 
-                size=\"sm\"
+                size="sm"
                 onClick={handleSubmitWithComments}
                 disabled={actionType === 'reject' && !comments.trim()}
               >
@@ -329,16 +329,16 @@ const TimesheetApprovalCard: React.FC<TimesheetApprovalCardProps> = ({
         )}
 
         {/* Action Buttons */}
-        <div className=\"flex justify-end space-x-3\">
+        <div className="flex justify-end space-x-3">
           <Button
-            variant=\"ghost\"
+            variant="ghost"
             onClick={() => handleAction('request_changes')}
             disabled={isProcessing}
           >
             Request Changes
           </Button>
           <Button
-            variant=\"secondary\"
+            variant="secondary"
             onClick={() => handleAction('reject')}
             disabled={isProcessing}
           >

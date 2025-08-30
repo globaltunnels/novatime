@@ -158,16 +158,16 @@ export const WeeklyTimesheetView: React.FC<WeeklyTimesheetViewProps> = ({
 
   if (loading) {
     return (
-      <div className=\"flex items-center justify-center h-64\">
-        <div className=\"text-lg text-[var(--text-muted)]\">Loading timesheet...</div>
+      <div className="flex items-center justify-center h-64">
+        <div className="text-lg text-[var(--text-muted)]">Loading timesheet...</div>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className=\"flex items-center justify-center h-64\">
-        <div className=\"text-lg text-[var(--error)]\">{error}</div>
+      <div className="flex items-center justify-center h-64">
+        <div className="text-lg text-[var(--error)]">{error}</div>
       </div>
     );
   }
@@ -178,23 +178,23 @@ export const WeeklyTimesheetView: React.FC<WeeklyTimesheetViewProps> = ({
   const weeklyTotals = timesheetData?.weekly_totals;
 
   return (
-    <div className=\"space-y-6\">
+    <div className="space-y-6">
       {/* Header */}
-      <div className=\"flex items-center justify-between\">
-        <div className=\"flex items-center space-x-4\">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center space-x-4">
           <Button 
-            variant=\"ghost\" 
-            size=\"sm\"
+            variant="ghost" 
+            size="sm"
             onClick={() => navigateWeek('prev')}
           >
             ← Previous Week
           </Button>
-          <h1 className=\"text-2xl font-bold text-[var(--text)]\">
+          <h1 className="text-2xl font-bold text-[var(--text)]">
             Week of {formatDate(weekStart.toISOString().split('T')[0])}
           </h1>
           <Button 
-            variant=\"ghost\" 
-            size=\"sm\"
+            variant="ghost" 
+            size="sm"
             onClick={() => navigateWeek('next')}
           >
             Next Week →
@@ -202,9 +202,9 @@ export const WeeklyTimesheetView: React.FC<WeeklyTimesheetViewProps> = ({
         </div>
         
         {timesheet && (
-          <div className=\"flex items-center space-x-4\">
+          <div className="flex items-center space-x-4">
             <span 
-              className=\"px-3 py-1 rounded-full text-sm font-medium\"
+              className="px-3 py-1 rounded-full text-sm font-medium"
               style={{ 
                 backgroundColor: `${getStatusColor(timesheet.status)}20`,
                 color: getStatusColor(timesheet.status)
@@ -229,26 +229,26 @@ export const WeeklyTimesheetView: React.FC<WeeklyTimesheetViewProps> = ({
             <CardTitle>Weekly Summary</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className=\"grid grid-cols-2 md:grid-cols-5 gap-4\">
-              <div className=\"text-center\">
-                <div className=\"text-2xl font-bold text-[var(--primary)]\">{weeklyTotals.total_hours}h</div>
-                <div className=\"text-sm text-[var(--text-muted)]\">Total Hours</div>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-[var(--primary)]">{weeklyTotals.total_hours}h</div>
+                <div className="text-sm text-[var(--text-muted)]">Total Hours</div>
               </div>
-              <div className=\"text-center\">
-                <div className=\"text-2xl font-bold text-[var(--success)]\">{weeklyTotals.billable_hours}h</div>
-                <div className=\"text-sm text-[var(--text-muted)]\">Billable Hours</div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-[var(--success)]">{weeklyTotals.billable_hours}h</div>
+                <div className="text-sm text-[var(--text-muted)]">Billable Hours</div>
               </div>
-              <div className=\"text-center\">
-                <div className=\"text-2xl font-bold text-[var(--warning)]\">{weeklyTotals.overtime_hours}h</div>
-                <div className=\"text-sm text-[var(--text-muted)]\">Overtime</div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-[var(--warning)]">{weeklyTotals.overtime_hours}h</div>
+                <div className="text-sm text-[var(--text-muted)]">Overtime</div>
               </div>
-              <div className=\"text-center\">
-                <div className=\"text-2xl font-bold text-[var(--info)]\">{weeklyTotals.billable_percentage}%</div>
-                <div className=\"text-sm text-[var(--text-muted)]\">Billable %</div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-[var(--info)]">{weeklyTotals.billable_percentage}%</div>
+                <div className="text-sm text-[var(--text-muted)]">Billable %</div>
               </div>
-              <div className=\"text-center\">
-                <div className=\"text-2xl font-bold text-[var(--text)]\">{weeklyTotals.average_daily_hours}h</div>
-                <div className=\"text-sm text-[var(--text-muted)]\">Daily Avg</div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-[var(--text)]">{weeklyTotals.average_daily_hours}h</div>
+                <div className="text-sm text-[var(--text-muted)]">Daily Avg</div>
               </div>
             </div>
           </CardContent>
@@ -261,25 +261,25 @@ export const WeeklyTimesheetView: React.FC<WeeklyTimesheetViewProps> = ({
           <CardTitle>Daily Breakdown</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className=\"overflow-x-auto\">
-            <table className=\"w-full border-collapse\">
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse">
               <thead>
-                <tr className=\"border-b border-[var(--border)]\">
-                  <th className=\"text-left py-2 px-3 text-[var(--text)] font-medium\">Day</th>
-                  <th className=\"text-left py-2 px-3 text-[var(--text)] font-medium\">Date</th>
-                  <th className=\"text-right py-2 px-3 text-[var(--text)] font-medium\">Total Hours</th>
-                  <th className=\"text-right py-2 px-3 text-[var(--text)] font-medium\">Billable Hours</th>
-                  <th className=\"text-right py-2 px-3 text-[var(--text)] font-medium\">Entries</th>
+                <tr className="border-b border-[var(--border)]">
+                  <th className="text-left py-2 px-3 text-[var(--text)] font-medium">Day</th>
+                  <th className="text-left py-2 px-3 text-[var(--text)] font-medium">Date</th>
+                  <th className="text-right py-2 px-3 text-[var(--text)] font-medium">Total Hours</th>
+                  <th className="text-right py-2 px-3 text-[var(--text)] font-medium">Billable Hours</th>
+                  <th className="text-right py-2 px-3 text-[var(--text)] font-medium">Entries</th>
                 </tr>
               </thead>
               <tbody>
                 {dailySummaries.map((day) => (
-                  <tr key={day.date} className=\"border-b border-[var(--border)] hover:bg-[var(--bg-elev)]\">
-                    <td className=\"py-3 px-3 text-[var(--text)] font-medium\">{day.day_name}</td>
-                    <td className=\"py-3 px-3 text-[var(--text-muted)]\">{formatDate(day.date)}</td>
-                    <td className=\"py-3 px-3 text-right text-[var(--text)]\">{day.total_hours}h</td>
-                    <td className=\"py-3 px-3 text-right text-[var(--success)]\">{day.billable_hours}h</td>
-                    <td className=\"py-3 px-3 text-right text-[var(--text-muted)]\">{day.entries_count}</td>
+                  <tr key={day.date} className="border-b border-[var(--border)] hover:bg-[var(--bg-elev)]">
+                    <td className="py-3 px-3 text-[var(--text)] font-medium">{day.day_name}</td>
+                    <td className="py-3 px-3 text-[var(--text-muted)]">{formatDate(day.date)}</td>
+                    <td className="py-3 px-3 text-right text-[var(--text)]">{day.total_hours}h</td>
+                    <td className="py-3 px-3 text-right text-[var(--success)]">{day.billable_hours}h</td>
+                    <td className="py-3 px-3 text-right text-[var(--text-muted)]">{day.entries_count}</td>
                   </tr>
                 ))}
               </tbody>
@@ -295,23 +295,23 @@ export const WeeklyTimesheetView: React.FC<WeeklyTimesheetViewProps> = ({
             <CardTitle>Project Breakdown</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className=\"overflow-x-auto\">
-              <table className=\"w-full border-collapse\">
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse">
                 <thead>
-                  <tr className=\"border-b border-[var(--border)]\">
-                    <th className=\"text-left py-2 px-3 text-[var(--text)] font-medium\">Project</th>
-                    <th className=\"text-right py-2 px-3 text-[var(--text)] font-medium\">Total Hours</th>
-                    <th className=\"text-right py-2 px-3 text-[var(--text)] font-medium\">Billable Hours</th>
-                    <th className=\"text-right py-2 px-3 text-[var(--text)] font-medium\">Entries</th>
+                  <tr className="border-b border-[var(--border)]">
+                    <th className="text-left py-2 px-3 text-[var(--text)] font-medium">Project</th>
+                    <th className="text-right py-2 px-3 text-[var(--text)] font-medium">Total Hours</th>
+                    <th className="text-right py-2 px-3 text-[var(--text)] font-medium">Billable Hours</th>
+                    <th className="text-right py-2 px-3 text-[var(--text)] font-medium">Entries</th>
                   </tr>
                 </thead>
                 <tbody>
                   {projectSummaries.map((project) => (
-                    <tr key={project.project_id} className=\"border-b border-[var(--border)] hover:bg-[var(--bg-elev)]\">
-                      <td className=\"py-3 px-3 text-[var(--text)] font-medium\">{project.project_name}</td>
-                      <td className=\"py-3 px-3 text-right text-[var(--text)]\">{project.total_hours}h</td>
-                      <td className=\"py-3 px-3 text-right text-[var(--success)]\">{project.billable_hours}h</td>
-                      <td className=\"py-3 px-3 text-right text-[var(--text-muted)]\">{project.entries_count}</td>
+                    <tr key={project.project_id} className="border-b border-[var(--border)] hover:bg-[var(--bg-elev)]">
+                      <td className="py-3 px-3 text-[var(--text)] font-medium">{project.project_name}</td>
+                      <td className="py-3 px-3 text-right text-[var(--text)]">{project.total_hours}h</td>
+                      <td className="py-3 px-3 text-right text-[var(--success)]">{project.billable_hours}h</td>
+                      <td className="py-3 px-3 text-right text-[var(--text-muted)]">{project.entries_count}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -328,27 +328,27 @@ export const WeeklyTimesheetView: React.FC<WeeklyTimesheetViewProps> = ({
             <CardTitle>Time Entries</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className=\"overflow-x-auto\">
-              <table className=\"w-full border-collapse\">
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse">
                 <thead>
-                  <tr className=\"border-b border-[var(--border)]\">
-                    <th className=\"text-left py-2 px-3 text-[var(--text)] font-medium\">Date</th>
-                    <th className=\"text-left py-2 px-3 text-[var(--text)] font-medium\">Project</th>
-                    <th className=\"text-left py-2 px-3 text-[var(--text)] font-medium\">Task</th>
-                    <th className=\"text-left py-2 px-3 text-[var(--text)] font-medium\">Description</th>
-                    <th className=\"text-right py-2 px-3 text-[var(--text)] font-medium\">Hours</th>
-                    <th className=\"text-center py-2 px-3 text-[var(--text)] font-medium\">Billable</th>
+                  <tr className="border-b border-[var(--border)]">
+                    <th className="text-left py-2 px-3 text-[var(--text)] font-medium">Date</th>
+                    <th className="text-left py-2 px-3 text-[var(--text)] font-medium">Project</th>
+                    <th className="text-left py-2 px-3 text-[var(--text)] font-medium">Task</th>
+                    <th className="text-left py-2 px-3 text-[var(--text)] font-medium">Description</th>
+                    <th className="text-right py-2 px-3 text-[var(--text)] font-medium">Hours</th>
+                    <th className="text-center py-2 px-3 text-[var(--text)] font-medium">Billable</th>
                   </tr>
                 </thead>
                 <tbody>
                   {timesheet.entries.map((entry) => (
-                    <tr key={entry.id} className=\"border-b border-[var(--border)] hover:bg-[var(--bg-elev)]\">
-                      <td className=\"py-3 px-3 text-[var(--text-muted)]\">{formatDate(entry.date)}</td>
-                      <td className=\"py-3 px-3 text-[var(--text)]\">{entry.project_name}</td>
-                      <td className=\"py-3 px-3 text-[var(--text-muted)]\">{entry.task_title || '-'}</td>
-                      <td className=\"py-3 px-3 text-[var(--text)] max-w-xs truncate\">{entry.description || '-'}</td>
-                      <td className=\"py-3 px-3 text-right text-[var(--text)] font-medium\">{entry.hours}h</td>
-                      <td className=\"py-3 px-3 text-center\">
+                    <tr key={entry.id} className="border-b border-[var(--border)] hover:bg-[var(--bg-elev)]">
+                      <td className="py-3 px-3 text-[var(--text-muted)]">{formatDate(entry.date)}</td>
+                      <td className="py-3 px-3 text-[var(--text)]">{entry.project_name}</td>
+                      <td className="py-3 px-3 text-[var(--text-muted)]">{entry.task_title || '-'}</td>
+                      <td className="py-3 px-3 text-[var(--text)] max-w-xs truncate">{entry.description || '-'}</td>
+                      <td className="py-3 px-3 text-right text-[var(--text)] font-medium">{entry.hours}h</td>
+                      <td className="py-3 px-3 text-center">
                         <span 
                           className={`inline-block w-3 h-3 rounded-full ${
                             entry.is_billable ? 'bg-[var(--success)]' : 'bg-[var(--text-muted)]'
@@ -367,10 +367,10 @@ export const WeeklyTimesheetView: React.FC<WeeklyTimesheetViewProps> = ({
       {/* Empty State */}
       {(!timesheet || timesheet.entries.length === 0) && (
         <Card>
-          <CardContent className=\"py-12 text-center\">
-            <div className=\"text-6xl mb-4\">⏰</div>
-            <div className=\"text-xl font-medium text-[var(--text)] mb-2\">No time entries for this week</div>
-            <div className=\"text-[var(--text-muted)] mb-6\">
+          <CardContent className="py-12 text-center">
+            <div className="text-6xl mb-4">⏰</div>
+            <div className="text-xl font-medium text-[var(--text)] mb-2">No time entries for this week</div>
+            <div className="text-[var(--text-muted)] mb-6">
               Start tracking your time or import from your time entries to see data here.
             </div>
             <Button>
